@@ -1,0 +1,39 @@
+<div class="login-form">
+  <form #registerform=ngForm (ngSubmit)="onsubmit()" >
+      <h2 class="text-center">Register</h2>   
+      
+      <div class="alert alert-danger" [hidden]='!error'>
+            {{error}}
+      </div>
+
+      <div class="form-group">
+            <input type="text" name ='name' class="form-control" placeholder="Email address or phone number" required="required" [(ngModel)]='form.name'>
+        </div>
+
+      <div class="form-group">
+          <input type="text" name ='fname' class="form-control" placeholder="First name" required="required" [(ngModel)]='form.fname'>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name ='lname' class="form-control" placeholder="Last name" required="required" [(ngModel)]='form.sname'>
+    </div>
+
+      <div class="form-group">
+        <input type="text" name ='mobile_number' class="form-control" placeholder="phone number" required="required" [(ngModel)]='form.mobile_number'>
+      </div>
+
+      <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder="Password" required="required" [(ngModel)]='form.password'>
+      </div>
+
+      <div class="form-group">
+        <input type="password" name ='password_confirmation' class="form-control" placeholder="Confirm password" required="required" [(ngModel)]='form.password_confirmation'>
+      </div>
+
+      <div class="form-group" >
+          <button type="submit" [disabled]='!registerform.valid' class="btn btn-primary btn-block">Register</button>
+      </div>
+             
+  </form>
+  <p class="text-center"><a [routerLink]="['']">Back to Login</a></p>
+</div>

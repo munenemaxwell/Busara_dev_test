@@ -1,0 +1,24 @@
+<div class="login-form">
+  <form #loginform=ngForm (ngSubmit)="onsubmit()" >
+
+      <h2 class="text-center">Sign In</h2>  
+      
+      <div class="alert alert-danger" [hidden]='!error'>
+            {{error}}
+      </div>
+
+      <div class="form-group">
+          <input type="text" name ='username' class="form-control" placeholder="username" required="required" [(ngModel)]='form.username'>
+      </div>
+      <div class="form-group">
+          <input type="password" name="password" class="form-control" placeholder="Password" required="required" [(ngModel)]='form.password'>
+      </div>
+      <div class="form-group" >
+          <button type="submit" [disabled]='!loginform.valid' class="btn btn-primary btn-block" >Log in</button>
+      </div>
+      <div class="clearfix">
+          <a href="#" class="pull-right">Forgot Password?</a>
+      </div>        
+  </form>
+  <p class="text-center"><a [routerLink]="['/register']">Create an Account</a></p>
+</div>
