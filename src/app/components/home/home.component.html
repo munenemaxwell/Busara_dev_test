@@ -52,11 +52,11 @@
 				<!-- END MENU -->
 			</div>
 		</div>
-		<div class="col-md-7">
+		<div class="col-md-9">
             <div class="profile-content">
                 <div class="row">
                     
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li *ngFor="let category of categories" class="list-group-item">{{category.name}}
                           
@@ -65,28 +65,43 @@
                         </ul>
                     </div>
                   
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                       <ul class="list-group list-group-flush">
                           <li *ngFor="let category of categories" class="list-group-item">
-                              <span class="badge badge-primary badge-pill">14 videos</span>
-                              <span class="badge badge-info badge-pill spanspace">watch</span>
+                              
+                              <span class="badge badge-info badge-pill spanspace pointer"  (click)="watch(category.id)">load videos</span>
                           </li>
                        
                       </ul>
                   
                   
-                  </div>
+				  </div>
+				  <div class="col-md-3">
+
+						<ul class="list-group list-group-flush">
+								<li *ngFor="let video of category_videos" class="list-group-item">
+									
+										<vg-player>
+												<video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+													<source src="{{video.file_path}}" type="video/mp4">
+												</video>
+											</vg-player>
+								
+								</li>
+							 
+							</ul>
+
+				  </div>
                   
                   </div>
                   
             </div>
         </div>
-        
-        <div class="col-md-2">
-
-        </div>
 
 	</div>
+
+			
+
 </div>
 
 

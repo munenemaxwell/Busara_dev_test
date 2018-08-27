@@ -11,6 +11,13 @@ import { HomeComponent } from './components/home/home.component';
 
 import { JwtModule } from '@auth0/angular-jwt'; //http request interceptor 
 
+//////modules for videogular
+
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +42,12 @@ import { JwtModule } from '@auth0/angular-jwt'; //http request interceptor
         whitelistedDomains: ['http://api.smartduka.busaracenterlab.org'],
         blacklistedRoutes: []
       }
-    })
+    }),
+
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
 
 
   ],

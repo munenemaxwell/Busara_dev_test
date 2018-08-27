@@ -4,9 +4,12 @@
 }
 
 
+
+.pointer {cursor: pointer;}
+
   /* Profile container */
   .profile {
-    margin: 20px 0;
+    margin: 10px 0;
   }
   
   /* Profile sidebar */
