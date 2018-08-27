@@ -27,12 +27,12 @@ import { JwtModule } from '@auth0/angular-jwt'; //http request interceptor
     JwtModule.forRoot({
       config: {
 
-        headerName: 'Authorization',
-        authScheme: 'Bearer',
+        //headerName: 'Authorization',
+        //authScheme: 'Bearer',
         tokenGetter: () => {
           return localStorage.getItem('access_token');
         },
-        whitelistedDomains: ['localhost:8000'],
+        whitelistedDomains: ['http://api.smartduka.busaracenterlab.org'],
         blacklistedRoutes: []
       }
     })
