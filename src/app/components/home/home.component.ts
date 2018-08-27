@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserdetailsService } from '../../services/userdetails.service'
 import { CategoriesService } from '../../services/categories.service';
+import { TokenService } from '../../services/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +11,21 @@ import { CategoriesService } from '../../services/categories.service';
 })
 export class HomeComponent implements OnInit {
  
-   public user: any;
+   public user: any ;
    public categories:any;
 
   constructor(
     private userdetails_service :UserdetailsService,
-    private category_service :CategoriesService
+    private category_service :CategoriesService,
+    private token_service :TokenService,
+    private router: Router
   ) { }
+
+  logout():void {
+    
+    this.token_service.deleteToken();
+    this.router.navigate(['/login']);
+  }
 
   ngOnInit() {
     this.userdetails_service.get_user_details().subscribe(
