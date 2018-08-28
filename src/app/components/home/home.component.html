@@ -2,6 +2,7 @@
 <div class="container">
     <div class="row profile">
 		<div class="col-md-3">
+			
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
@@ -27,25 +28,22 @@
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
 					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
-						</li>
+	
 						<li>
 							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
+							<i class="fas fa-cogs">Settings</i>
+							 </a>
 						</li>
 						<li>
 							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
+							 <i class="fas fa-thumbs-up">like</i>
+							 </a>
 						</li>
 						<li>
 							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
+									<i class="fab fa-twitter spanspace">follow</i>
+									
+						   </a>
 						</li>
 					</ul>
 				</div>
@@ -59,23 +57,21 @@
                     <div class="col-md-6">
                         <ul class="list-group list-group-flush">
                             <li *ngFor="let category of categories" class="list-group-item">{{category.name}}
-                          
-                            </li>
+									
+									<i class="fas fa-headphones-alt spanspace play saving" [hidden]="current!=category.id">
+											buffering videos<span>.</span><span>.</span><span>.</span>
+									</i>
+									<span class="badge badge-info badge-pill spanspace pointer"
+									  (click)="watch(category.id)" [hidden]="current==category.id"> videos</span>
+
+									  
+
+								</li>
                          
                         </ul>
                     </div>
                   
-                  <div class="col-md-3">
-                      <ul class="list-group list-group-flush">
-                          <li *ngFor="let category of categories" class="list-group-item">
-                              
-                              <span class="badge badge-info badge-pill spanspace pointer"  (click)="watch(category.id)">load videos</span>
-                          </li>
-                       
-                      </ul>
-                  
-                  
-				  </div>
+                
 				  <div class="col-md-3">
 
 						<ul class="list-group list-group-flush">

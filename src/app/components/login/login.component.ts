@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   public message : string;
    
-  public error=null;
+  public error='';
 
   constructor(
         private loginservice:LoginService,
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 
     console.log(error);
 
-    this.error=error['error']['non_field_errors'][0];
+    this.error=error['error']['error_description'];
   }
 
   ngOnInit() {

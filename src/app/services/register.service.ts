@@ -9,19 +9,19 @@ export class RegisterService {
 
   public headers: any;
 
-  public login_url: string ='http://api.smartduka.busaracenterlab.org/oauth/token/';
+  public _url: string ='http://api.smartduka.busaracenterlab.org/api/v1/users/';
  
 
   constructor(private http :HttpClient ) {
 
     this.headers={
-      headers: new HttpHeaders({'Content-Type':'application/x-www-form-urlencoded'})
+      headers: new HttpHeaders({'Content-Type':'application/json'})
     }
   }
 
   register(data) : Observable<any> {
 
-    return this.http.post(this.login_url,data,this.headers);
+    return this.http.post(this._url,data,this.headers);
 
   }
 

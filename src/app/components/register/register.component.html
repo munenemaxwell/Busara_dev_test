@@ -2,32 +2,39 @@
   <form #registerform=ngForm (ngSubmit)="onsubmit()" >
       <h2 class="text-center">Register</h2>   
       
-      <div class="alert alert-danger" [hidden]='!error'>
+      <div *ngFor="let error of errors" class="alert alert-danger" [hidden]='!errors'>
             {{error}}
       </div>
 
       <div class="form-group">
-            <input type="text" name ='name' class="form-control" placeholder="Email address or phone number" required="required" [(ngModel)]='form.name'>
+            <input type="text" name ='name' class="form-control"  placeholder="Email address or phone number" required="required" [(ngModel)]='form.email' 
+            (ngModelChange)="validate()" >
         </div>
 
       <div class="form-group">
-          <input type="text" name ='fname' class="form-control" placeholder="First name" required="required" [(ngModel)]='form.fname'>
+          <input type="text" name ='fname' class="form-control" placeholder="First name" required="required" [(ngModel)]='form.first_name'>
       </div>
 
       <div class="form-group">
-        <input type="text" name ='lname' class="form-control" placeholder="Last name" required="required" [(ngModel)]='form.sname'>
+        <input type="text" name ='lname' class="form-control" placeholder="Last name" required="required" [(ngModel)]='form.last_name'>
     </div>
 
       <div class="form-group">
-        <input type="text" name ='mobile_number' class="form-control" placeholder="phone number" required="required" [(ngModel)]='form.mobile_number'>
+        <input type="text" name ='mobile_number' class="form-control" placeholder="phone number" required="required" [(ngModel)]='form.phone_number'>
       </div>
+
+      <div class="form-group">
+        <select name="location" class="form-control" [(ngModel)]="form.location" required="required">
+            <option value="" selected="true">select residence</option>
+            <option *ngFor="let location of locations" value="{{location.id}}">
+                    {{location.name}}
+            </option>
+        </select>
+      </div>
+
 
       <div class="form-group">
           <input type="password" name="password" class="form-control" placeholder="Password" required="required" [(ngModel)]='form.password'>
-      </div>
-
-      <div class="form-group">
-        <input type="password" name ='password_confirmation' class="form-control" placeholder="Confirm password" required="required" [(ngModel)]='form.password_confirmation'>
       </div>
 
       <div class="form-group" >

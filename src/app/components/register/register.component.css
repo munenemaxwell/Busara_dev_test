@@ -1,3 +1,14 @@
+input.ng-invalid,select.ng-invalid
+{
+  border-left:3px solid red;
+}
+
+input.ng-valid, select.ng-valid
+{
+  border-left:3px solid green;
+}
+
+
 .login-form {
     width: 340px;
     margin: 50px auto;

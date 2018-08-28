@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
    public categories:any;
    public all_videos:any;
    public category_videos:any;
+   public current:number =0;
 
   constructor(
     private userdetails_service :UserdetailsService,
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
 
   watch(id):void {
     
+    this.current=id;
     this.getvideos_service.get_categvideos(id).subscribe(
      data=> this.category_videos=data.results,
      error=>console.log(error)
