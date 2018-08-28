@@ -18,6 +18,10 @@ import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
 
+export function jwtTokenGetter() {
+  return localStorage.getItem('access_token');
+}
+
 
 @NgModule({
   declarations: [
@@ -34,11 +38,8 @@ import {VgBufferingModule} from 'videogular2/buffering';
     JwtModule.forRoot({
       config: {
 
-        //headerName: 'Authorization',
-        //authScheme: 'Bearer',
-        tokenGetter: () => {
-          return localStorage.getItem('access_token');
-        },
+    
+        tokenGetter: jwtTokenGetter(),
         whitelistedDomains: ['http://api.smartduka.busaracenterlab.org'],
         blacklistedRoutes: []
       }
@@ -55,3 +56,4 @@ import {VgBufferingModule} from 'videogular2/buffering';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
