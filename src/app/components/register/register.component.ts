@@ -80,7 +80,11 @@ export class RegisterComponent implements OnInit {
       password:this.form.password
     }
 
+    console.log('credentials '+credentials.username +' pass '+credentials.password)
+      
+
     this.loginservice.login(credentials).subscribe(
+
       
       data=>this.success_register(data),
       error=>console.log(error)
@@ -88,6 +92,14 @@ export class RegisterComponent implements OnInit {
     );
     
 
+  }
+
+  validate(){
+    
+    let patt = new RegExp("^[^\s@]+@[^\s@]+\.[^\s@]+$");
+    let res = patt.test(this.form.email.toString()); 
+    this.valid=res;
+   
   }
 
   

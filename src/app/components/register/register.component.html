@@ -7,7 +7,7 @@
       </div>
 
       <div class="form-group">
-            <input type="text" name ='name' class="form-control"  placeholder="Email address or phone number" required="required" [(ngModel)]='form.email' 
+            <input type="text" name ='name' class="form-control"  placeholder="Email or phone number(+254..)" required="required" [(ngModel)]='form.email' 
             (ngModelChange)="validate()" >
         </div>
 
@@ -34,11 +34,11 @@
 
 
       <div class="form-group">
-          <input type="password" name="password" class="form-control" placeholder="Password" required="required" [(ngModel)]='form.password'>
+          <input type="password" name="password" class="form-control" placeholder="Password"  [required]="!valid"  [(ngModel)]='form.password'>
       </div>
 
       <div class="form-group" >
-          <button type="submit" [disabled]='!registerform.valid' class="btn btn-primary btn-block">Register</button>
+          <button type="submit" [disabled]="!registerform.valid" class="btn btn-primary btn-block">Register</button>
       </div>
              
   </form>
