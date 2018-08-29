@@ -38,8 +38,8 @@ export function jwtTokenGetter() {
     JwtModule.forRoot({
       config: {
 
-        tokenGetter: jwtTokenGetter(),
-        whitelistedDomains: ['http://api.smartduka.busaracenterlab.org'],
+        tokenGetter: jwtTokenGetter,
+        whitelistedDomains: ['http://api.smartduka.busaracenterlab.org','https://'],
         blacklistedRoutes: []
       }
     }),
