@@ -20,6 +20,7 @@ export class CategoriesService {
     this.headers={
       headers: new HttpHeaders({
         'Content-Type':'application/x-www-form-urlencoded',
+        
         'Authorization':'Bearer '+ this.tokenservice.getToken()
     })
     }

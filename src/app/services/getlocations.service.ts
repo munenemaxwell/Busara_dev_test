@@ -21,6 +21,7 @@ export class GetlocationsService {
     this.headers={
       headers: new HttpHeaders({
         'Content-Type':'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin':'*',
         'Authorization':'Bearer '+ this.tokenservice.getToken()
     })
     }
