@@ -35,15 +35,14 @@ export function jwtTokenGetter() {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    /*JwtModule.forRoot({
+    JwtModule.forRoot({
       config: {
 
-    
         tokenGetter: jwtTokenGetter(),
         whitelistedDomains: ['http://api.smartduka.busaracenterlab.org'],
         blacklistedRoutes: []
       }
-    }),*/
+    }),
 
     VgCoreModule,
     VgControlsModule,
