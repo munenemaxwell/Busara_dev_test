@@ -21,7 +21,7 @@ export class LoginService {
 
   login(data):Observable<any> {
      
-  console.log('username '+data.username+' password '+data.password);
+  //console.log('username '+data.username+' password '+data.password);
 
     let oauth2_client_id = 'DDN4xTPsvxU1HCIEvqcWuRP00cVnEA9FE5f6k8e5';
     let oauth2_client_secret = 'h74XB8mvGBilhkmjfQS5uIRV1mC6nHSlQJDk25W1PEP6RJjIson9lGovcvbCByV9jKxsJFRbrDp3H7AqhyIWhIrqMNpoKpTTwZgWg2TqJbkxm54yEllidOyUX6jBcZfL';

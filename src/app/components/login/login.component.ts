@@ -51,8 +51,6 @@ export class LoginComponent implements OnInit {
 
   handle_error(error){
 
-    console.log(error);
-
     this.error=error['error']['error_description'];
   }
 
