@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   public errors  =null;
   public locations :any='';
-
+  public generic_error='';
   public valid:boolean =false;
 
   constructor(
@@ -80,14 +80,14 @@ export class RegisterComponent implements OnInit {
       password:this.form.password
     }
 
-    console.log('credentials '+credentials.username +' pass '+credentials.password)
+    //console.log('credentials '+credentials.username +' pass '+credentials.password)
       
 
     this.loginservice.login(credentials).subscribe(
 
       
       data=>this.success_register(data),
-      error=>console.log(error)
+      error=>this.generic_error=error
 
     );
     
@@ -107,7 +107,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.getlocations_service.get_all_locations().subscribe(
       data=>this.locations=data.results,
-      error=>console.log(error)
+      error=>this.generic_error=error
     );
   }
 
