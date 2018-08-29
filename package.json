@@ -25,6 +25,7 @@
     "@angular/router": "^6.0.3",
     "@auth0/angular-jwt": "^2.0",
     "@types/core-js": "^2.5.0",
+    "@angular-devkit/build-optimizer": "^0.4.0",
     "bootstrap": "4.0.0",
     "core-js": "^2.5.4",
     "express": "^4.16.3",
@@ -59,6 +60,6 @@
   },
   "engines": {
     "node": "8.10.0",
-    "npm": "5.6.0"
+    "npm": "5.7.1"
   }
 }
