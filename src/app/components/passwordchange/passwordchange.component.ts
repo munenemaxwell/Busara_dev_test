@@ -14,6 +14,7 @@ export class PasswordchangeComponent implements OnInit {
   }
 
   public error = '';
+  public notification = '';
 
   constructor(private reset_pass: ResetPasswordService) { }
 
@@ -21,7 +22,7 @@ export class PasswordchangeComponent implements OnInit {
   }
 
   redirect(data): void {
-    console.log('success reset ' + data);
+    this.notification = data;
   }
 
   onsubmit(): void {
