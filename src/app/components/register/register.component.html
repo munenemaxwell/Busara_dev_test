@@ -7,9 +7,23 @@
       </div>
 
       <div class="form-group">
-            <input type="text" name ='name' class="form-control"  placeholder="Email or phone number(+254..)" required="required" [(ngModel)]='form.email' 
+            <input type="text" name ='name' class="form-control"  placeholder="Email" required="required" [(ngModel)]='form.email' 
             (ngModelChange)="validate()" >
-        </div>
+      </div>
+
+
+      <div class="form-group">
+        <input type="text" name ='mobile_number' class="form-control" placeholder="phone number(+254...)" required="required" [(ngModel)]='form.phone_number'>
+      </div>
+
+
+      <div class="form-group">
+        <select name="username" class="form-control" [(ngModel)]="form.username" required="required" (ngModelChange)="validate()">
+            <option value="" selected>select username</option>
+            <option value="{{form.email}}">{{form.email}}</option>
+            <option value="{{form.phone_number}}">{{form.phone_number}}</option>
+        </select>
+      </div>
 
       <div class="form-group">
           <input type="text" name ='fname' class="form-control" placeholder="First name" required="required" [(ngModel)]='form.first_name'>
@@ -19,13 +33,11 @@
         <input type="text" name ='lname' class="form-control" placeholder="Last name" required="required" [(ngModel)]='form.last_name'>
     </div>
 
-      <div class="form-group">
-        <input type="text" name ='mobile_number' class="form-control" placeholder="phone number" required="required" [(ngModel)]='form.phone_number'>
-      </div>
+     
 
       <div class="form-group">
         <select name="location" class="form-control" [(ngModel)]="form.location" required="required">
-            <option value="" selected="true">select residence</option>
+            <option value="" selected>select residence</option>
             <option *ngFor="let location of locations" value="{{location.id}}">
                     {{location.name}}
             </option>
@@ -34,7 +46,7 @@
 
 
       <div class="form-group">
-          <input type="password" name="password" class="form-control" placeholder="Password"  [required]="!valid"  [(ngModel)]='form.password'>
+          <input type="password" name="password" class="form-control" placeholder="Password"  [hidden]="!valid"  [(ngModel)]='form.password'>
       </div>
 
       <div class="form-group" >

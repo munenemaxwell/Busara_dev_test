@@ -11,8 +11,9 @@ export class GetlocationsService {
   public headers: any;
 
   public _url: string ='http://api.smartduka.busaracenterlab.org/api/v1/locations/';
- 
 
+  public _url_id: string ='http://api.smartduka.busaracenterlab.org/api/v1/locations/';
+ 
 
   constructor(
     private http: HttpClient,
@@ -21,7 +22,6 @@ export class GetlocationsService {
     this.headers={
       headers: new HttpHeaders({
         'Content-Type':'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin':'*',
         'Authorization':'Bearer '+ this.tokenservice.getToken()
     })
     }
@@ -30,6 +30,12 @@ export class GetlocationsService {
  get_all_locations():Observable<any> {
    
   return this.http.get(this._url,this.headers);
+ }
+
+ get_location_name(id):Observable<any> {
+
+  return this.http.get(this._url_id+id+'/',this.headers);
+
  }
 
 }

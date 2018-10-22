@@ -17,6 +17,7 @@ import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
+import { PasswordchangeComponent } from './components/passwordchange/passwordchange.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem('access_token');
@@ -28,7 +29,8 @@ export function jwtTokenGetter() {
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PasswordchangeComponent
   ],
   imports: [
     BrowserModule,

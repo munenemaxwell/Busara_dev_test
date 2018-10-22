@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
 
   public form ={
     email: '',
+    username:'',
     first_name: '',
     last_name: '',
     is_active: true,
@@ -25,7 +26,7 @@ export class RegisterComponent implements OnInit {
     is_trainer: false,
     trainees: [],
     date_joined: null,
-    location: null,
+    location: '',
     password: ''
 }
 
@@ -96,13 +97,12 @@ export class RegisterComponent implements OnInit {
 
   validate(){
     
+    let username_option=this.form.username;
     let patt = new RegExp("^[^\s@]+@[^\s@]+\.[^\s@]+$");
-    let res = patt.test(this.form.email.toString()); 
+    let res = patt.test(username_option.toString()); 
     this.valid=res;
    
   }
-
-  
 
   ngOnInit() {
     this.getlocations_service.get_all_locations().subscribe(

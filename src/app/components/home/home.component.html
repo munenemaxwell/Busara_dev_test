@@ -10,26 +10,36 @@
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div *ngIf="user" class="profile-usertitle-name">
-						{{user.first_name}} {{user.last_name}}
-					</div>
-					<div  *ngIf="user" class="profile-usertitle-job">
-						{{user.email | lowercase}}
-					</div>
-				</div>
+        <div class="profile-usertitle">
+          <div *ngIf="user" class="profile-usertitle-name">
+            {{user.first_name}} {{user.last_name}}
+          </div>
+          <div *ngIf="user" class="profile-usertitle-job">
+            {{user.email | lowercase}}
+          </div>
+
+          <div *ngIf="user" class="profile-usertitle-job">
+            {{user_locale}}
+          </div>
+
+          <div *ngIf="user" class="profile-usertitle-job">
+            {{user.phone_number | lowercase}}
+          </div>
+        </div>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
-				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-success btn-sm" (click)="logout()" >Logout</button>
-					
-				</div>
+        <div class="profile-userbuttons">
+          
+          <button type="button" class="btn btn-info btn-sm" (click)="reset()">Reset Password</button>
+          <button type="button" class="btn btn-success btn-sm" (click)="logout()">Log out</button>
+
+        </div>
 				<!-- END SIDEBAR BUTTONS -->
-				<!-- SIDEBAR MENU -->
+				<!-- SIDEBAR MENU 
 				<div class="profile-usermenu">
 					<ul class="nav">
 	
-						<li>
+						<li >
 							<a href="#">
 							<i class="fas fa-cogs">Settings</i>
 							 </a>
@@ -46,7 +56,7 @@
 						   </a>
 						</li>
 					</ul>
-				</div>
+				</div>-->
 				<!-- END MENU -->
 			</div>
 		</div>
@@ -62,10 +72,7 @@
 											buffering videos<span>.</span><span>.</span><span>.</span>
 									</i>
 									<span class="badge badge-info badge-pill spanspace pointer"
-									  (click)="watch(category.id)" [hidden]="current==category.id"> videos</span>
-
-									  
-
+									  (click)="watch(category.id)" [hidden]="current==category.id"> Click to ist </span>
 								</li>
                          
                         </ul>
@@ -82,15 +89,10 @@
 													<source src="{{video.file_path}}" type="video/mp4">
 												</video>
 											</vg-player>
-								
 								</li>
-							 
 							</ul>
-
 				  </div>
-                  
-                  </div>
-                  
+                  </div>   
             </div>
         </div>
 
